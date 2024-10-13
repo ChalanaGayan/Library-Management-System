@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj": {}
+    "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Library-Management-System/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj": {}
   },
   "projects": {
-    "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj": {
+    "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Library-Management-System/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj",
+        "projectUniqueName": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Library-Management-System/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj",
         "projectName": "LibraryManagementBackend",
-        "projectPath": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj",
+        "projectPath": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Library-Management-System/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj",
         "packagesPath": "/Users/chalanagayan/.nuget/packages/",
-        "outputPath": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Backend/LibraryManagementBackend/obj/",
+        "outputPath": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Library-Management-System/Backend/LibraryManagementBackend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/chalanagayan/.nuget/NuGet/NuGet.Config"

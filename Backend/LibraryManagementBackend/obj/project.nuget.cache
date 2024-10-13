@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BUIL31P2qJw=",
+  "dgSpecHash": "f5jujAtV/YU=",
   "success": true,
-  "projectFilePath": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj",
+  "projectFilePath": "/Users/chalanagayan/Desktop/LibraryManagementSystem-BasicCRUD/Library-Management-System/Backend/LibraryManagementBackend/LibraryManagementBackend.csproj",
   "expectedPackageFiles": [
     "/Users/chalanagayan/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/chalanagayan/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.10/microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",
