@@ -41,6 +41,7 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     }
   };
 
+  // show modal for add, edit a book
   const showModal = () => {
     setIsModalVisible(true);
     setCurrentBook(null);
@@ -49,8 +50,9 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
 
   const handleOk = async () => {
     try {
-      const values = await form.validateFields();
+      const values = await form.validateFields(); // Validate form inputs.
       if (currentBook) {
+        // put req
         await fetch(`http://localhost:5006/api/books/${currentBook.id}`, {
           method: "PUT",
           headers: {
@@ -60,6 +62,7 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
         });
         message.success("Book updated successfully!");
       } else {
+        //post req for add a book
         await fetch("http://localhost:5006/api/books", {
           method: "POST",
           headers: {
@@ -77,6 +80,7 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     }
   };
 
+  //handle modal closing
   const handleCancel = () => {
     setIsModalVisible(false);
   };
@@ -87,10 +91,11 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     setIsModalVisible(true);
   };
 
+  // Function to handle deleting a book.
   const handleDelete = async (id: number) => {
     try {
       await fetch(`http://localhost:5006/api/books/${id}`, {
-        method: "DELETE",
+        method: "DELETE", // Send DELETE request.
       });
       message.success("Book deleted successfully!");
       fetchBooks();
@@ -100,6 +105,7 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     }
   };
 
+  // Columns of design table - antd
   const columns = [
     {
       title: "Title",
@@ -144,8 +150,8 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
       <Table
         columns={columns}
         dataSource={booksData}
-        loading={loading}
-        rowKey="id"
+        loading={loading} //add a loading icon
+        rowKey="id" // use unique key for each book
         className="mb-10"
       />
       <Button
@@ -158,10 +164,10 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
         Add Book
       </Button>
       <Modal
-        title={currentBook ? "Edit Book" : "Add Book"}
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        title={currentBook ? "Edit Book" : "Add Book"} //change modla title
+        visible={isModalVisible} // Control modal visibility.
+        onOk={handleOk} // Handle form submission.
+        onCancel={handleCancel} // Handle modal cancellation.
       >
         <Form form={form} layout="vertical">
           <Form.Item
@@ -193,6 +199,8 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
             ]}
           >
             <Select>
+              {" "}
+              {/* Dropdown for selecting year */}
               {Array.from(
                 { length: new Date().getFullYear() - 1499 },
                 (_, i) => 1500 + i
