@@ -100,7 +100,9 @@ const LandingPage = () => {
           <Button type="primary">Login</Button>
         </Link>
         <Link to="/register" style={{ marginLeft: "10px" }}>
-          <Button>Register</Button>
+          <Button className="border-2 border-green-600 text-green-600 ">
+            Register
+          </Button>
         </Link>
       </Modal>
     </div>
