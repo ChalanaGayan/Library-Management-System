@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryManagementBackend.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20241013151811_AddIdentityTables")]
-    partial class AddIdentityTables
+    [Migration("20241014071159_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

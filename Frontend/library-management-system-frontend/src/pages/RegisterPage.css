@@ -1,0 +1,19 @@
+.register-page {
+  background-image: url("/login.webp"); /* Replace with the actual path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.form-container {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background for the form */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Adjust color and transparency */
+}

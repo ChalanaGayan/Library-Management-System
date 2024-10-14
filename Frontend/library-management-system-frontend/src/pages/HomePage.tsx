@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BookTable from "../components/BookTable";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Switch } from "antd";
 
