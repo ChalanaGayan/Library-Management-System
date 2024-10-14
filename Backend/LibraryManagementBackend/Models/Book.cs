@@ -2,10 +2,10 @@ namespace LibraryManagementBackend.Models
 {
     public class Book
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public string ISBN { get; set; }
-        public int PublishedYear { get; set; }
+        public required int Id { get; set; }
+        public required string Title { get; set; }
+        public required string Author { get; set; }
+        public required string ISBN { get; set; }
+        public required int PublishedYear { get; set; }
     }
 }
