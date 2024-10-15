@@ -17,12 +17,7 @@ This is a simple Library Management System that allows users to manage books in 
       - [Running the Application](#running-the-application)
 
 ## Project Overview
-
-This Business Requirements Document outlines the development of a simple Library Management System. The purpose of this application is to allow users to manage books in a library, including functionalities to create, read, update, and delete book records.
-
-## Timeline
-
-Candidates are expected to complete the assignment within one calendar week from the date of receipt.
+The purpose of this application is to allow users to manage books in a library, including functionalities to create, read, update, and delete book records.
 
 ## Project Scope
 
@@ -34,8 +29,8 @@ The project scope is limited to the following functionalities:
   - Update an existing book record.
   - Delete a book record.
 
-- **User Authentication (Optional)**: While not required, the assignment can include user authentication and registration if time allows. This is considered a "nice-to-have" feature but is not mandatory for completing the assignment.
-
+- **User Authentication**
+  
 ## Functionality
 
 The Library Management System allows users to:
