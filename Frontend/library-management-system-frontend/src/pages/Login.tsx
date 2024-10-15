@@ -32,7 +32,6 @@ const LoginPage = () => {
     }
   };
 
-  // for handling back button
   const handleBackClick = () => {
     navigate("/");
   };
@@ -42,7 +41,6 @@ const LoginPage = () => {
       <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
         <Col xs={22} sm={16} md={10} lg={8}>
           <div className="form-container">
-            {/* Back Button */}
             <Button
               type="link"
               onClick={handleBackClick}

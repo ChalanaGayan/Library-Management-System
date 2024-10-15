@@ -33,7 +33,8 @@ const HomePage = () => {
           <Switch checked={darkMode} onChange={toggleDarkMode} />
         </div>
       </div>
-      <div className="flex-grow p-4">
+      <div className="flex-grow p-4 shadow-md shadow-blue-500">
+        {/* book table - to show books */}
         <BookTable darkMode={darkMode} />
       </div>
       <Footer darkMode={darkMode} />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Table, Button, Modal, Form, Input, message, Select } from "antd";
-import { useAuth } from "../contexts/AuthContext"; // Adjust the import according to your file structure
+import { useAuth } from "../contexts/AuthContext"; // adjust the import according to your file structure
 
 interface Book {
   id: number;
@@ -15,21 +15,21 @@ interface BookTableProps {
 }
 
 const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
-  const { isAuthenticated, logout } = useAuth(); // Use authentication context
+  const { isAuthenticated, logout } = useAuth(); // use authentication context
   const [booksData, setBooksData] = useState<Book[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [currentBook, setCurrentBook] = useState<Book | null>(null);
   const [form] = Form.useForm();
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL; // Access the base URL from environment variable
+  const BASE_URL = import.meta.env.VITE_BASE_URL; // access the base URL from environment variable
 
   useEffect(() => {
     if (isAuthenticated) {
       fetchBooks();
     } else {
       message.error("You need to be logged in to view books.");
-      logout(); // Log out if not authenticated
+      logout();
     }
   }, [isAuthenticated]);
 
@@ -39,7 +39,7 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
       const token = localStorage.getItem("authToken");
       const response = await fetch(`${BASE_URL}/api/books`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Add authorization header
+          Authorization: `Bearer ${token}`, // add authorization header
         },
       });
       if (!response.ok) {
@@ -55,7 +55,7 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     }
   };
 
-  // Show modal for add/edit a book
+  //switch between add and edit book
   const showModal = () => {
     setIsModalVisible(true);
     setCurrentBook(null);
@@ -64,20 +64,20 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
 
   const handleOk = async () => {
     try {
-      const values = await form.validateFields(); // Validate form inputs
+      const values = await form.validateFields(); // validate form inputs
       const token = localStorage.getItem("authToken");
 
       if (currentBook) {
-        // PUT request to update a book
+        // update Book - Put
         const response = await fetch(
           `${BASE_URL}/api/books/${currentBook.id}`,
           {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`, // Add authorization header
+              Authorization: `Bearer ${token}`,
             },
-            body: JSON.stringify({ ...values, id: currentBook.id }), // Include the ID in the request body
+            body: JSON.stringify({ ...values, id: currentBook.id }), //adding id to the req body
           }
         );
 
@@ -87,12 +87,12 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
 
         message.success("Book updated successfully!");
       } else {
-        // POST request to add a book
+        // add a book - Post
         const response = await fetch(`${BASE_URL}/api/books`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // Add authorization header
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(values),
         });
@@ -111,25 +111,24 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     }
   };
 
-  // Handle modal closing
   const handleCancel = () => {
     setIsModalVisible(false);
   };
 
   const handleEdit = (book: Book) => {
     setCurrentBook(book);
-    form.setFieldsValue(book); // Populate the form with the current book details
+    form.setFieldsValue(book);
     setIsModalVisible(true);
   };
 
-  // Function to handle deleting a book
+  //Delete book
   const handleDelete = async (id: number) => {
     try {
       const token = localStorage.getItem("authToken");
       await fetch(`${BASE_URL}/api/books/${id}`, {
-        method: "DELETE", // Send DELETE request
+        method: "DELETE",
         headers: {
-          Authorization: `Bearer ${token}`, // Add authorization header
+          Authorization: `Bearer ${token}`,
         },
       });
       message.success("Book deleted successfully!");
@@ -140,7 +139,6 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
     }
   };
 
-  // Columns of design table - antd
   const columns = [
     {
       title: "Title",
@@ -185,8 +183,8 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
       <Table
         columns={columns}
         dataSource={booksData}
-        loading={loading} // Add a loading icon
-        rowKey="id" // Use unique key for each book
+        loading={loading}
+        rowKey="id"
         className="mb-10"
       />
       <Button
@@ -199,10 +197,10 @@ const BookTable: React.FC<BookTableProps> = ({ darkMode }) => {
         Add Book
       </Button>
       <Modal
-        title={currentBook ? "Edit Book" : "Add Book"} // Change modal title
-        visible={isModalVisible} // Control modal visibility
-        onOk={handleOk} // Handle form submission
-        onCancel={handleCancel} // Handle modal cancellation
+        title={currentBook ? "Edit Book" : "Add Book"} //to change modal titile
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
       >
         <Form form={form} layout="vertical">
           <Form.Item

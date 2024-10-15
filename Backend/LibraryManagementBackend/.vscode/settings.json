@@ -1,0 +1,5 @@
+{
+  "appService.preDeployTask": "publish-release",
+  "appService.deploySubpath": "bin/Release/net8.0/publish",
+  "appService.defaultWebAppToDeploy": "/subscriptions/285ceec8-7174-4ad5-b18b-249587717d63/resourceGroups/MyTests/providers/Microsoft.Web/sites/libraryManagementSystemAPI"
+}

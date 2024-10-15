@@ -17,6 +17,7 @@ const App = () => (
           path="/home"
           element={
             <PrivateRoute>
+              {/* use the PrivateRoute component to protect the route */}
               <HomePage />
             </PrivateRoute>
           }

@@ -5,7 +5,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// add services to the container
 builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection")));
 
@@ -26,12 +26,12 @@ builder.Services.AddCors(options =>
         });
 });
 
-// Add controllers and configure Swagger
+// add controllers and configure Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    // Configure Swagger to use Bearer Authentication
+    // swagger configured for authorization
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Library Management API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -72,7 +72,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAllOrigins");
 
-// Use authentication and authorization
+// use authentication and authorization
 app.UseAuthentication();
 app.UseAuthorization();
 

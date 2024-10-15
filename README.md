@@ -1,18 +1,20 @@
-**# Library Management System
+# Library Management System
 
 This is a simple Library Management System that allows users to manage books in a library. The application includes functionalities to create, read, update, and delete book records. The project consists of a backend API developed in C# .NET with an SQLite database and a frontend built with React and TypeScript.
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Project Overview](#project-overview)
-- [Timeline](#timeline)
-- [Project Scope](#project-scope)
-- [Functionality](#functionality)
-- [Installation](#installation)
-  - [Prerequisites](#prerequisites)
-  - [Steps](#steps)
-    - [Running the Application](#running-the-application)
+- [Library Management System](#library-management-system)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Timeline](#timeline)
+  - [Project Scope](#project-scope)
+  - [Functionality](#functionality)
+  - [API Documentation](#api-documentation)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Steps](#steps)
+      - [Running the Application](#running-the-application)
 
 ## Project Overview
 
@@ -43,6 +45,13 @@ The Library Management System allows users to:
 - **Update Book Record**: Edit and update existing book records.
 - **Delete Book Record**: Remove book records that are no longer relevant.
 
+## API Documentation
+
+You can find the API documentation for the Library Management System at the following link:
+
+[API Documentation](https://documenter.getpostman.com/view/36360468/2sAXxTdWoM)
+
+
 ## Installation
 
 ### Prerequisites
@@ -55,18 +64,35 @@ Before you begin, ensure you have the following installed on your machine:
 ### Steps
 
 1. Clone the repository:
-  git clone https://github.com/ChalanaGayan/Library-Management-System.git
-  cd Library-Management-System
+    ```bash
+    git clone https://github.com/ChalanaGayan/Library-Management-System.git
+    cd Library-Management-System
+    ```
 
-2.Install dependencies for the backend:
+2. Install dependencies for the backend:
+    ```bash
     cd Backend/LibraryManagementBackend
     dotnet restore
+    ```
 
-3.Install dependencies for the frontend:
+3. Install dependencies for the frontend:
+    ```bash
     cd ../../Frontend/library-management-system-frontend
     npm install
+    ```
+
+4. Make sure you have a .env file .If not make and include this code inside the .env file to connect frontend with the backend. 
+    ```bash
+
+    VITE_BASE_URL=http://localhost:5006
+
+    ```
 
 #### Running the Application
+
 You can run both the backend and frontend together using the provided script:
 
-    ./start.sh*
+```bash
+./start.sh
+```
+

@@ -8,15 +8,14 @@ const { Title } = Typography;
 const Register = () => {
   const navigate = useNavigate();
 
-  // Email and Password validation regex patterns
+  // Use regex for validation
   const passwordRegex = /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // At least 8 characters, one uppercase, one special character
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Valid email pattern
 
   const onFinish = async (values: { email: string; password: string }) => {
     try {
-      // Use environment variable for base URL
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/register`,
+        `${import.meta.env.VITE_BASE_URL}/register`, //use .env variabel
         values,
         {
           headers: {
@@ -27,25 +26,23 @@ const Register = () => {
 
       if (response.status === 200) {
         message.success("Registration successful! Redirecting to login...");
-        navigate("/login"); // Navigate to login page on success
+        navigate("/login");
       }
     } catch (error) {
       message.error("Registration failed. Please try again.");
     }
   };
 
-  // Handle back button click
   const handleBackClick = () => {
     navigate("/");
   };
 
   return (
     <div className="register-page" style={{ backgroundColor: "#fff" }}>
-      {/* Back Button */}
-
       <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
         <Col xs={22} sm={16} md={10} lg={8}>
           <div className="form-container">
+            {/* back button to go back  */}
             <Button
               type="link"
               onClick={handleBackClick}

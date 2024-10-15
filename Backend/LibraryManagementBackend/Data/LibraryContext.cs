@@ -5,7 +5,7 @@ using LibraryManagementBackend.Models;
 
 namespace LibraryManagementBackend.Data
 {
-    public class LibraryContext : IdentityDbContext<IdentityUser> // Inherit from IdentityDbContext
+    public class LibraryContext : IdentityDbContext<IdentityUser> // inherited from identityDbContext
     {
         public LibraryContext(DbContextOptions<LibraryContext> options) : base(options) { }
 
